@@ -1,7 +1,8 @@
+"use client";
+
 import Image from "next/image";
 
 import {
-  ArrowRight,
   Blend,
   ChartNoAxesColumn,
   CircleDot,
@@ -10,6 +11,7 @@ import {
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { ContainerScroll } from "@/components/ui/container-scroll";
 
 const features = [
   {
@@ -40,31 +42,30 @@ export const Hero = () => {
       <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
         {/* Left side - Main content */}
         <div className="flex-1">
-          <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            Your Money, Made Simple
+          <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl">
+            Big income won't make you rich. A system will.
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Hisabi gives you instant clarity over your money — automatically and privately.
+            Hisabi is your personal finance system — track, understand, and grow your wealth effortlessly.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
             <Button asChild>
-              <a href="https://github.com/hisabi">
-                Join the Waitlist
+              <a href="#pricing">
+                Get Lifetime Access
               </a>
             </Button>
             <Button
               variant="outline"
-              className="from-background h-auto gap-2 bg-linear-to-r to-transparent shadow-md"
+              className="from-background h-auto gap-2 border-0 bg-linear-to-r to-transparent"
               asChild
             >
               <a
-                href="#features"
+                href="https://demo.hisabi.app"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
-                See How It Works
-                <ArrowRight className="stroke-3" />
+                View Demo
               </a>
             </Button>
           </div>
@@ -99,15 +100,17 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
-        <div className="relative h-[793px] w-full">
-          <Image
-            src="/hero.webp"
-            alt="hero"
-            fill
-            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
-          />
-        </div>
+      <div className="mt-12 md:mt-20 lg:container lg:mt-24">
+        <ContainerScroll>
+          <div className="relative w-full" style={{ aspectRatio: '3140 / 1802' }}>
+            <Image
+              src="/hero.webp"
+              alt="hero"
+              fill
+              className="rounded-2xl object-cover shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)]"
+            />
+          </div>
+        </ContainerScroll>
       </div>
     </section>
   );

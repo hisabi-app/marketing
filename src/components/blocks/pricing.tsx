@@ -47,10 +47,10 @@ export const Pricing = ({ className }: { className?: string }) => {
 
               <div className="space-y-3">
                 <Button className="w-full" size="lg" asChild>
-                  <a href="https://github.com/hisabi">Get Lifetime Access - $75</a>
+                  <a href="https://github.com/hisabi-app/hisabi">Get Lifetime Access - $75</a>
                 </Button>
                 <Button variant="outline" className="w-full" size="lg" asChild>
-                  <a href="https://github.com/hisabi">View Demo</a>
+                  <a href="https://hisabi.on-forge.com/">View Demo</a>
                 </Button>
               </div>
             </CardContent>
@@ -61,7 +61,7 @@ export const Pricing = ({ className }: { className?: string }) => {
           <p>
             Includes a 30-day money-back guarantee. Questions?{" "}
             <a
-              href="https://github.com/hisabi"
+              href="https://github.com/hisabi-app/hisabi"
               className="text-primary underline hover:no-underline"
             >
               Contact us

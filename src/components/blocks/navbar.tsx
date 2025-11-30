@@ -37,7 +37,7 @@ const ITEMS = [
     ],
   },
   { label: "Story", href: "/story" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Pricing", href: "/#pricing" },
 ];
 
 export const Navbar = () => {
@@ -116,7 +116,7 @@ export const Navbar = () => {
         {/* Auth Buttons */}
         <div className="flex items-center gap-2.5">
           <a
-            href="https://github.com/shadcnblocks/mainline-nextjs-template"
+            href="https://github.com/hisabi-app/hisabi"
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="size-4" />

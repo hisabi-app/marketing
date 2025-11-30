@@ -13,3 +13,7 @@ Once the task is completed just mark it as done with checkmark.
 - [x] Remove FAQ and contact pages
 - [x] Remove "Trusted by Hisabi users" from landing page
 - [x] Bring back pricing but as a section in landing page with two payment options ($49 per year or $149 lifetime) also no free trial but can view demo
+- [x] Remove Xwitter LinkedIn from footer
+- [x] Remove login and signup pages
+- [x] Make sure all github links in this project points to https://github.com/hisabi-app/hisabi
+- [x] Update the footer with correct message and CTA
