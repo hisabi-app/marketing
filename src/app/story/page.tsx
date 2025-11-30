@@ -1,5 +1,4 @@
 import { Background } from "@/components/background";
-
 import { AboutHero } from "@/components/blocks/about-hero";
 
 export default function AboutPage() {

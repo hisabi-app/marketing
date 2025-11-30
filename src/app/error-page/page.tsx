@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 import { Background } from "@/components/background";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 export default function ErrorPage() {
   return (

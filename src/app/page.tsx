@@ -1,7 +1,7 @@
 import { Background } from "@/components/background";
 import { Features } from "@/components/blocks/features";
-import { Hero } from "@/components/blocks/hero";
 import { GetNotified } from "@/components/blocks/get-notified";
+import { Hero } from "@/components/blocks/hero";
 import { ResourceAllocation } from "@/components/blocks/resource-allocation";
 
 export default function Home() {
