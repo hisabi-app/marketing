@@ -37,7 +37,7 @@ const ITEMS = [
     ],
   },
   { label: "Story", href: "/story" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Get Notified", href: "/#get-notified" },
 ];
 
 export const Navbar = () => {

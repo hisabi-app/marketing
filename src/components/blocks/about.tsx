@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 
 const About = () => {
   return (
-    <section className="container mt-10 flex flex-col-reverse gap-8 md:mt-14 md:gap-14 lg:mt-20 lg:flex-row lg:items-end">
-      {/* Images Left - Text Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
+    <section className="container mt-10 flex flex-col-reverse gap-8 md:mt-14 md:gap-14 lg:mt-20 lg:flex-row lg:items-start">
+      {/* Left Column */}
+      <div className="flex flex-1 flex-col gap-8 lg:gap-16 xl:gap-20">
         <ImageSection
           images={[
             { src: "/about/1.webp", alt: "Team collaboration" },
@@ -17,28 +17,33 @@ const About = () => {
           className="xl:-translate-x-10"
         />
 
-        <TextSection
-          title="Our Mission"
-          paragraphs={[
-            "Hisabi was built to help everyday people instantly understand their financial habits without spreadsheets, bank integrations, or complex setup.",
-            "We believe that everyone deserves to feel in control of their money. That's why we built Hisabi to be simple, private, and powerful.",
-            "If you're interested in contributing, check out our GitHub.",
-          ]}
-          ctaButton={{
-            href: "https://github.com/hisabi-app/hisabi",
-            text: "Contribute on GitHub",
-          }}
-        />
+        <TextSection title="My Story">
+          <p>
+            In 2021, I sat in a room full of people during a financial wellness session. The speaker asked one question: &quot;Who here knows exactly how much they spent on groceries last month?&quot;
+          </p>
+          <p>
+            The room went silent. I went silent.
+          </p>
+          <p>
+            I was <strong>$35,000 in debt</strong> after university, living paycheck to paycheck, with zero visibility into my own habits. That silence was the trigger I needed to take control.
+          </p>
+        </TextSection>
       </div>
 
-      {/* Text Left - Images Right */}
-      <div className="flex flex-col gap-8 lg:gap-16 xl:gap-20">
-        <TextSection
-          paragraphs={[
-            "Hisabi gives you instant clarity over your money — automatically and privately — so you can make smarter financial decisions.",
-            "Your financial life, visualized beautifully. No spreadsheets. No chaos. Just clarity.",
-          ]}
-        />
+      {/* Right Column */}
+      <div className="flex flex-1 flex-col gap-8 lg:gap-16 xl:gap-20">
+        <TextSection>
+          <p>
+            I started small—tracking every SMS transaction in a spreadsheet. Eventually, I automated it.
+          </p>
+          <p>
+            That little system became Hisabi. It didn&apos;t just help me track expenses; it helped me <strong>pay off every cent of that $35k debt</strong> and build real wealth.
+          </p>
+          <p>
+            You don&apos;t need to be a finance expert. You just need a system that works. Hisabi is mine, and I hope it becomes yours.
+          </p>
+        </TextSection>
+
         <ImageSection
           images={[
             { src: "/about/3.webp", alt: "Modern workspace" },
@@ -80,7 +85,7 @@ export function ImageSection({ images, className }: ImageSectionProps) {
 
 interface TextSectionProps {
   title?: string;
-  paragraphs: string[];
+  children: React.ReactNode;
   ctaButton?: {
     href: string;
     text: string;
@@ -89,16 +94,14 @@ interface TextSectionProps {
 
 export function TextSection({
   title,
-  paragraphs,
+  children,
   ctaButton,
 }: TextSectionProps) {
   return (
     <section className="flex-1 space-y-4 text-lg md:space-y-6">
       {title && <h2 className="text-foreground text-4xl">{title}</h2>}
       <div className="text-muted-foreground max-w-xl space-y-6">
-        {paragraphs.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
+        {children}
       </div>
       {ctaButton && (
         <div className="mt-8">

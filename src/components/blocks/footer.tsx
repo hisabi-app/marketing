@@ -8,7 +8,7 @@ export function Footer() {
   const navigation = [
     { name: "Features", href: "/#features" },
     { name: "Story", href: "/story" },
-    { name: "Pricing", href: "/#pricing" },
+    { name: "Get Notified", href: "/#get-notified" },
     { name: "Privacy Policy", href: "/privacy" },
   ];
 
@@ -23,8 +23,8 @@ export function Footer() {
         </p>
         <div className="flex flex-col items-center gap-4">
           <Button size="lg" className="mt-4" asChild>
-            <a href="#pricing">
-              Get Lifetime Access
+            <a href="/#get-notified">
+              Get Notified
             </a>
           </Button>
           <a

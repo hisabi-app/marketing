@@ -3,10 +3,10 @@
 import Image from "next/image";
 
 import {
-  Blend,
-  ChartNoAxesColumn,
-  CircleDot,
-  Diamond,
+  LayoutDashboard,
+  MessageSquareText,
+  ShieldCheck,
+  Sparkles,
 } from "lucide-react";
 
 import { DashedLine } from "@/components/dashed-line";
@@ -16,23 +16,23 @@ import { ContainerScroll } from "@/components/ui/container-scroll";
 const features = [
   {
     title: "Smart SMS Detection",
-    description: "Hisabi reads your bank SMS messages instantly.",
-    icon: CircleDot,
+    description: "Instantly turn bank SMS alerts into tracked expenses. No manual entry needed.",
+    icon: MessageSquareText,
   },
   {
-    title: "Auto Categorization",
-    description: "Expenses are automatically organized by category.",
-    icon: Blend,
+    title: "Data Encryption",
+    description: "Your financial data is encrypted and secure. Privacy by design, always.",
+    icon: ShieldCheck,
   },
   {
-    title: "Clean Dashboards",
-    description: "Visualize your spending with beautiful charts.",
-    icon: Diamond,
+    title: "Beautiful Dashboards",
+    description: "Visualize your financial life with stunning, interactive charts and graphs.",
+    icon: LayoutDashboard,
   },
   {
     title: "HisabiAI Insights",
-    description: "Get AI-powered insights into your financial habits.",
-    icon: ChartNoAxesColumn,
+    description: "Unlock deep insights into your spending habits with our AI-powered assistant.",
+    icon: Sparkles,
   },
 ];
 
@@ -52,8 +52,8 @@ export const Hero = () => {
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
             <Button asChild>
-              <a href="#pricing">
-                Get Lifetime Access
+              <a href="/#get-notified">
+                Get Notified
               </a>
             </Button>
             <Button

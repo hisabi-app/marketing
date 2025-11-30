@@ -10,7 +10,7 @@ export const Pricing = ({ className }: { className?: string }) => {
       <div className="container max-w-4xl">
         <div className="space-y-4 text-center">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Guess what? It's a one-time payment.
+            Simple, Transparent Pricing
           </h2>
           <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
             No subscriptions, no recurring fees — just pay once and it's yours forever.

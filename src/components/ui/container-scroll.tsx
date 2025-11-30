@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect, ReactNode } from "react";
+import { useRef, useState, useEffect, useLayoutEffect, ReactNode } from "react";
 
 interface ContainerScrollProps {
   children: ReactNode;
@@ -8,7 +8,36 @@ interface ContainerScrollProps {
 
 export const ContainerScroll = ({ children }: ContainerScrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState<number | null>(null);
+  const [hasAnimatedIn, setHasAnimatedIn] = useState(false);
+
+  useLayoutEffect(() => {
+    const calculateProgress = () => {
+      if (!containerRef.current) return 0;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const startPoint = windowHeight;
+      const endPoint = windowHeight * 0.3;
+
+      return Math.min(
+        Math.max((startPoint - rect.top) / (startPoint - endPoint), 0),
+        1
+      );
+    };
+
+    // Set initial value synchronously before paint
+    setScrollProgress(calculateProgress());
+  }, []);
+
+  useEffect(() => {
+    // Trigger entrance animation after initial render
+    if (scrollProgress !== null && !hasAnimatedIn) {
+      const timer = setTimeout(() => setHasAnimatedIn(true), 50);
+      return () => clearTimeout(timer);
+    }
+  }, [scrollProgress, hasAnimatedIn]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +46,6 @@ export const ContainerScroll = ({ children }: ContainerScrollProps) => {
       const rect = containerRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Calculate progress based on element position
-      // Start animation when element enters viewport, end when it's at the top
       const startPoint = windowHeight;
       const endPoint = windowHeight * 0.3;
 
@@ -30,16 +57,20 @@ export const ContainerScroll = ({ children }: ContainerScrollProps) => {
       setScrollProgress(progress);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial call
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Calculate transforms based on scroll progress
-  const rotateX = 25 - scrollProgress * 25; // 25deg to 0deg
-  const scale = 0.9 + scrollProgress * 0.1; // 0.9 to 1
-  const translateY = 50 - scrollProgress * 50; // 50px to 0px
+  const progress = scrollProgress ?? 0;
+  const rotateX = 25 - progress * 25; // 25deg to 0deg
+  const scale = 0.9 + progress * 0.1; // 0.9 to 1
+  const translateY = 50 - progress * 50; // 50px to 0px
+
+  // Entrance animation offset
+  const entranceOffset = hasAnimatedIn ? 0 : 30;
+  const entranceOpacity = hasAnimatedIn ? 1 : 0;
 
   return (
     <div
@@ -50,10 +81,11 @@ export const ContainerScroll = ({ children }: ContainerScrollProps) => {
       }}
     >
       <div
-        className="w-full transition-transform duration-100 ease-out"
+        className="w-full transition-[opacity,transform] duration-700 ease-out"
         style={{
-          transform: `rotateX(${rotateX}deg) scale(${scale}) translateY(${translateY}px)`,
+          transform: `rotateX(${rotateX}deg) scale(${scale}) translateY(${translateY + entranceOffset}px)`,
           transformOrigin: "center top",
+          opacity: scrollProgress === null ? 0 : entranceOpacity,
         }}
       >
         {children}
