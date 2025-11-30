@@ -94,9 +94,9 @@ const bottomItems = [
     fade: [""],
   },
   {
-    title: "Multi-currency.",
+    title: "Multiple accounts.",
     description:
-      "Track expenses in multiple currencies with automatic conversion.",
+      "Track expenses across all your bank accounts in one place.",
     images: [
       {
         src: "/resource-allocation/notifications.webp",

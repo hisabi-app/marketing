@@ -62,7 +62,9 @@ export const Hero = () => {
               asChild
             >
               <a
-                href="https://demo.hisabi.app"
+                href="https://hisabi.on-forge.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
                 View Demo

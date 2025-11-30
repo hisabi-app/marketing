@@ -1,7 +1,6 @@
 import { Background } from "@/components/background";
 import { Features } from "@/components/blocks/features";
 import { Hero } from "@/components/blocks/hero";
-import { Logos } from "@/components/blocks/logos";
 import { Pricing } from "@/components/blocks/pricing";
 import { ResourceAllocation } from "@/components/blocks/resource-allocation";
 
@@ -10,7 +9,6 @@ export default function Home() {
     <>
       <Background className="via-muted to-muted/80">
         <Hero />
-        <Logos />
         <Features />
         <ResourceAllocation />
       </Background>

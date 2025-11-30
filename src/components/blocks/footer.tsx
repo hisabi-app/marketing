@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Github } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -7,9 +8,8 @@ export function Footer() {
     { name: "Features", href: "/#features" },
     { name: "Story", href: "/story" },
     { name: "Pricing", href: "/#pricing" },
+    { name: "Privacy Policy", href: "/privacy" },
   ];
-
-  const legal = [{ name: "Privacy Policy", href: "/privacy" }];
 
   return (
     <footer className="flex flex-col items-center gap-14 pt-28 lg:pt-32">
@@ -18,14 +18,23 @@ export function Footer() {
           Ready to take control of your money?
         </h2>
         <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
-          Join thousands building wealth with a system that works. No spreadsheets, no complexity — just clarity.
+          Start building your wealth with a system that works.
         </p>
-        <div>
+        <div className="flex flex-col items-center gap-4">
           <Button size="lg" className="mt-4" asChild>
             <a href="#pricing">
               Get Lifetime Access
             </a>
           </Button>
+          <a
+            href="https://github.com/hisabi-app/hisabi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Github className="size-4" />
+            <span className="text-sm font-medium">Star on GitHub</span>
+          </a>
         </div>
       </div>
 
@@ -36,18 +45,6 @@ export function Footer() {
               <Link
                 href={item.href}
                 className="font-medium transition-opacity hover:opacity-75"
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-wrap items-center justify-center gap-6">
-          {legal.map((item) => (
-            <li key={item.name}>
-              <Link
-                href={item.href}
-                className="text-muted-foreground text-sm transition-opacity hover:opacity-75"
               >
                 {item.name}
               </Link>

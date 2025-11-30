@@ -117,6 +117,8 @@ export const Navbar = () => {
         <div className="flex items-center gap-2.5">
           <a
             href="https://github.com/hisabi-app/hisabi"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="size-4" />

@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
-import { ChevronRight } from "lucide-react";
 
 import { DashedLine } from "../dashed-line";
 
@@ -17,7 +14,8 @@ const items = [
     image: "/features/cycle-card.svg",
   },
   {
-    title: "Privacy-first and open-source",
+    title: "Privacy-first and",
+    titleLink: { text: "open-source", href: "https://github.com/hisabi-app/hisabi" },
     image: "/features/overview-card.svg",
   },
 ];
@@ -60,19 +58,24 @@ export const Features = () => {
                     <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
                   </div>
 
-                  <Link
-                    href="#"
-                    className={
-                      "group flex items-center justify-between gap-4 pe-4 pt-4 md:pe-6 md:pt-6"
-                    }
-                  >
+                  <div className="pe-4 pt-4 md:pe-6 md:pt-6">
                     <h3 className="font-display max-w-60 text-2xl leading-tight font-bold tracking-tight">
                       {item.title}
+                      {item.titleLink && (
+                        <>
+                          {" "}
+                          <a
+                            href={item.titleLink.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary underline hover:no-underline"
+                          >
+                            {item.titleLink.text}
+                          </a>
+                        </>
+                      )}
                     </h3>
-                    <div className="rounded-full border p-2">
-                      <ChevronRight className="size-6 transition-transform group-hover:translate-x-1 lg:size-9" />
-                    </div>
-                  </Link>
+                  </div>
                 </div>
                 {i < items.length - 1 && (
                   <div className="relative hidden md:block">
