@@ -1,7 +1,6 @@
 {
-  "name": "mainline-nextjs-template",
+  "name": "hisabi",
   "version": "1.2.0",
-  "author": "Shadcnblocks.com",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
