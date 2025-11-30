@@ -6,11 +6,9 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const navigation = [
-    { name: "Product", href: "/#feature-modern-teams" },
-    { name: "About Us", href: "/about" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Contact", href: "/contact" },
+    { name: "Features", href: "/#features" },
+    { name: "Story", href: "/story" },
+    { name: "Pricing", href: "/#pricing" },
   ];
 
   const social = [
@@ -27,8 +25,7 @@ export function Footer() {
           Start your free trial today
         </h2>
         <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
-          Mainline is the fit-for-purpose tool for planning and building modern
-          software products.
+          Hisabi helps everyday people instantly understand their financial habits without spreadsheets, bank integrations, or complex setup.
         </p>
         <div>
           <Button size="lg" className="mt-4" asChild>

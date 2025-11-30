@@ -8,8 +8,6 @@ import { usePathname } from "next/navigation";
 
 import { ChevronRight, Github } from "lucide-react";
 
-import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -26,22 +24,20 @@ const ITEMS = [
     href: "#features",
     dropdownItems: [
       {
-        title: "Modern product teams",
-        href: "/#feature-modern-teams",
+        title: "Smart SMS Detection",
+        href: "/#features",
         description:
-          "Mainline is built on the habits that make the best product teams successful",
+          "Hisabi reads your bank SMS messages and extracts transactions automatically",
       },
       {
-        title: "Resource Allocation",
+        title: "Beautiful Insights",
         href: "/#resource-allocation",
-        description: "Mainline your resource allocation and execution",
+        description: "Visualize your spending with clean dashboards and AI insights",
       },
     ],
   },
-  { label: "About Us", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/contact" },
+  { label: "Story", href: "/story" },
+  { label: "Pricing", href: "#pricing" },
 ];
 
 export const Navbar = () => {
@@ -119,18 +115,12 @@ export const Navbar = () => {
 
         {/* Auth Buttons */}
         <div className="flex items-center gap-2.5">
-          <ThemeToggle />
-          <Link href="/login" className="max-lg:hidden">
-            <Button variant="outline">
-              <span className="relative z-10">Login</span>
-            </Button>
-          </Link>
           <a
             href="https://github.com/shadcnblocks/mainline-nextjs-template"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="size-4" />
-            <span className="sr-only">GitHub</span>
+            <span className="text-sm font-medium">Star on GitHub</span>
           </a>
 
           {/* Hamburger Menu Button (Mobile Only) */}

@@ -1,133 +1,72 @@
 "use client";
 
-import { useState } from "react";
-
-import { Check } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 
-const plans = [
-  {
-    name: "Free",
-    monthlyPrice: "$0",
-    yearlyPrice: "$0",
-    description: "Free for everyone",
-    features: [
-      "Unlimited members",
-      "2 teams",
-      "500 issues",
-      "Slack and Github integrations",
-    ],
-  },
-  {
-    name: "Startup",
-    monthlyPrice: "$8",
-    yearlyPrice: "$6",
-    features: [
-      "All free plan features and...",
-      "Mainline AI",
-      "Unlimited teams",
-      "Unlimited issues and file uploads",
-      "Mainline Insights",
-      "Admin roles",
-    ],
-  },
-  {
-    name: "Enterprise",
-    monthlyPrice: "$8",
-    yearlyPrice: "$6",
-    features: [
-      "All free plan features and...",
-      "Mainline AI",
-      "Supermainline AGI",
-      "Free daily catered lunch",
-      "random HIPPA audits",
-    ],
-  },
-];
-
 export const Pricing = ({ className }: { className?: string }) => {
-  const [isAnnual, setIsAnnual] = useState(true);
-
   return (
-    <section className={cn("py-28 lg:py-32", className)}>
-      <div className="container max-w-5xl">
+    <section id="pricing" className={cn("py-28 lg:py-32", className)}>
+      <div className="container max-w-4xl">
         <div className="space-y-4 text-center">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Pricing
+            Simple, One-Time Pricing
           </h2>
           <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
-            Use Mainline for free with your whole team. Upgrade to enable
-            unlimited issues, enhanced security controls, and additional
-            features.
+            Pay once, own forever. No subscriptions, no recurring fees, just lifetime access to all features.
           </p>
         </div>
 
-        <div className="mt-8 grid items-start gap-5 text-start md:mt-12 md:grid-cols-3 lg:mt-20">
-          {plans.map((plan) => (
-            <Card
-              key={plan.name}
-              className={`${
-                plan.name === "Startup"
-                  ? "outline-primary origin-top outline-4"
-                  : ""
-              }`}
-            >
-              <CardContent className="flex flex-col gap-7 px-6 py-5">
+        <div className="mt-8 flex justify-center md:mt-12 lg:mt-20">
+          <Card className="outline-primary relative w-full max-w-lg outline outline-4">
+            <div className="bg-primary text-primary-foreground absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full px-6 py-2 text-sm font-semibold">
+              🚀 Pre-Launch: 50% OFF
+            </div>
+            <CardContent className="flex flex-col gap-8 px-8 py-10">
+              <div className="space-y-4 text-center">
+                <h3 className="text-foreground text-2xl font-semibold">
+                  Lifetime Access
+                </h3>
                 <div className="space-y-2">
-                  <h3 className="text-foreground font-semibold">{plan.name}</h3>
-                  <div className="space-y-1">
-                    <div className="text-muted-foreground text-lg font-medium">
-                      {isAnnual ? plan.yearlyPrice : plan.monthlyPrice}{" "}
-                      {plan.name !== "Free" && (
-                        <span className="text-muted-foreground">
-                          per user/
-                          {isAnnual ? "year" : "month"}
-                        </span>
-                      )}
+                  <div className="flex flex-col items-center gap-2">
+                    <span className="text-muted-foreground text-2xl line-through">
+                      $149
+                    </span>
+                    <div className="flex items-baseline justify-center gap-2">
+                      <span className="text-6xl font-bold">$75</span>
                     </div>
                   </div>
+                  <p className="text-muted-foreground text-lg">
+                    One-time payment. Yours forever.
+                  </p>
+                  <p className="text-primary text-sm font-semibold">
+                    Limited time pre-launch offer
+                  </p>
                 </div>
+              </div>
 
-                {plan.name !== "Free" ? (
-                  <div className="flex items-center gap-2">
-                    <Switch
-                      checked={isAnnual}
-                      onCheckedChange={() => setIsAnnual(!isAnnual)}
-                      aria-label="Toggle annual billing"
-                    />
-                    <span className="text-sm font-medium">Billed annually</span>
-                  </div>
-                ) : (
-                  <span className="text-muted-foreground text-sm">
-                    {plan.description}
-                  </span>
-                )}
-
-                <div className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <div
-                      key={feature}
-                      className="text-muted-foreground flex items-center gap-1.5"
-                    >
-                      <Check className="size-5 shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <Button
-                  className="w-fit"
-                  variant={plan.name === "Startup" ? "default" : "outline"}
-                >
-                  Get started
+              <div className="space-y-3">
+                <Button className="w-full" size="lg" asChild>
+                  <a href="https://github.com/hisabi">Get Lifetime Access - $75</a>
                 </Button>
-              </CardContent>
-            </Card>
-          ))}
+                <Button variant="outline" className="w-full" size="lg" asChild>
+                  <a href="https://github.com/hisabi">View Demo</a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="text-muted-foreground mt-8 text-center text-sm">
+          <p>
+            Includes a 30-day money-back guarantee. Questions?{" "}
+            <a
+              href="https://github.com/hisabi"
+              className="text-primary underline hover:no-underline"
+            >
+              Contact us
+            </a>
+          </p>
         </div>
       </div>
     </section>

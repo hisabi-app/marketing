@@ -13,23 +13,23 @@ import { Button } from "@/components/ui/button";
 
 const features = [
   {
-    title: "Tailored workflows",
-    description: "Track progress across custom issue flows for your team.",
+    title: "Smart SMS Detection",
+    description: "Hisabi reads your bank SMS messages instantly.",
     icon: CircleDot,
   },
   {
-    title: "Cross-team projects",
-    description: "Collaborate across teams and departments.",
+    title: "Auto Categorization",
+    description: "Expenses are automatically organized by category.",
     icon: Blend,
   },
   {
-    title: "Milestones",
-    description: "Break projects down into concrete phases.",
+    title: "Clean Dashboards",
+    description: "Visualize your spending with beautiful charts.",
     icon: Diamond,
   },
   {
-    title: "Progress insights",
-    description: "Track scope, velocity, and progress over time.",
+    title: "HisabiAI Insights",
+    description: "Get AI-powered insights into your financial habits.",
     icon: ChartNoAxesColumn,
   },
 ];
@@ -41,18 +41,17 @@ export const Hero = () => {
         {/* Left side - Main content */}
         <div className="flex-1">
           <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl xl:whitespace-nowrap">
-            Mainline Next.js template
+            Your Money, Made Simple
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Mainline is an open-source website template built with shadcn/ui,
-            Tailwind 4 & Next.js
+            Hisabi gives you instant clarity over your money — automatically and privately.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4 lg:flex-nowrap">
             <Button asChild>
-              <a href="https://github.com/shadcnblocks/mainline-nextjs-template">
-                Get template
+              <a href="https://github.com/hisabi">
+                Join the Waitlist
               </a>
             </Button>
             <Button
@@ -61,10 +60,10 @@ export const Hero = () => {
               asChild
             >
               <a
-                href="https://shadcnblocks.com"
+                href="#features"
                 className="max-w-56 truncate text-start md:max-w-none"
               >
-                Built by shadcnblocks.com
+                See How It Works
                 <ArrowRight className="stroke-3" />
               </a>
             </Button>

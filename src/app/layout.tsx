@@ -63,29 +63,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mainline - Modern Next.js Template",
-    template: "%s | Mainline",
+    default: "Hisabi - My Account / My Finance",
+    template: "%s | Hisabi",
   },
   description:
-    "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+    "Open-source personal finance application that reads financial SMS messages, extracts transactions, categorizes spending, and provides insights.",
   keywords: [
-    "Next.js",
-    "nextjs template",
-    "nextjs theme",
-    "nextjs starter",
-    "shadcn template",
-    "shadcn theme",
-    "shadcn starter",
-    "tailwind template",
-    "tailwind theme",
-    "tailwind starter",
-    "mdx template",
-    "mdx theme",
-    "mdx starter",
+    "Hisabi",
+    "personal finance",
+    "expense tracker",
+    "SMS banking",
+    "open source",
+    "budgeting",
+    "finance app",
   ],
-  authors: [{ name: "shadcnblocks.com" }],
-  creator: "shadcnblocks.com",
-  publisher: "shadcnblocks.com",
+  authors: [{ name: "Hisabi Team" }],
+  creator: "Hisabi Team",
+  publisher: "Hisabi Team",
   robots: {
     index: true,
     follow: true,
@@ -102,26 +96,26 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Mainline - Modern Next.js Template",
+    title: "Hisabi - My Account / My Finance",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
-    siteName: "Mainline",
+      "Open-source personal finance application that reads financial SMS messages, extracts transactions, categorizes spending, and provides insights.",
+    siteName: "Hisabi",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mainline - Modern Next.js Template",
+        alt: "Hisabi - My Account / My Finance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mainline - Modern Next.js Template",
+    title: "Hisabi - My Account / My Finance",
     description:
-      "A modern Next.js template built with shadcn/ui, Tailwind & MDX. Open source - MIT License.",
+      "Open-source personal finance application that reads financial SMS messages, extracts transactions, categorizes spending, and provides insights.",
     images: ["/og-image.jpg"],
-    creator: "@ausrobdev",
+    creator: "@hisabi",
   },
 };
 
@@ -143,7 +137,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
+          forcedTheme="light"
           disableTransitionOnChange
         >
           <StyleGlideProvider />
