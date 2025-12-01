@@ -63,19 +63,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hisabi - My Account / My Finance",
+    default: "Hisabi - Your Personal Finance System",
     template: "%s | Hisabi",
   },
   description:
-    "Open-source personal finance application that reads financial SMS messages, extracts transactions, categorizes spending, and provides insights.",
+    "Big income won't make you rich. A system will. Hisabi automatically tracks your expenses from SMS, provides AI-powered insights, and helps you build real wealth. Open-source, privacy-first financial management.",
   keywords: [
     "Hisabi",
     "personal finance",
     "expense tracker",
     "SMS banking",
-    "open source",
-    "budgeting",
-    "finance app",
+    "SMS expense tracking",
+    "open source finance app",
+    "budgeting app",
+    "financial insights",
+    "wealth management",
+    "privacy-first finance",
+    "automatic expense tracking",
   ],
   authors: [{ name: "Hisabi Team" }],
   creator: "Hisabi Team",
@@ -96,24 +100,25 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "Hisabi - My Account / My Finance",
+    title: "Hisabi - Your Personal Finance System",
     description:
-      "Open-source personal finance application that reads financial SMS messages, extracts transactions, categorizes spending, and provides insights.",
+      "Big income won't make you rich. A system will. Hisabi automatically tracks your expenses from SMS, provides AI-powered insights, and helps you build real wealth. Open-source and privacy-first.",
     siteName: "Hisabi",
+    type: "website",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Hisabi - My Account / My Finance",
+        alt: "Hisabi - Your Personal Finance System",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hisabi - My Account / My Finance",
+    title: "Hisabi - Your Personal Finance System",
     description:
-      "Open-source personal finance application that reads financial SMS messages, extracts transactions, categorizes spending, and provides insights.",
+      "Big income won't make you rich. A system will. Hisabi automatically tracks your expenses from SMS and helps you build real wealth. Open-source and privacy-first.",
     images: ["/og-image.jpg"],
     creator: "@hisabi",
   },

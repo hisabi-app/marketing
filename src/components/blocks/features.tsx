@@ -6,17 +6,20 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const items = [
   {
-    title: "Automatic expense tracking from SMS",
-    image: "/features/triage-card.svg",
+    title: "Your money, always visible",
+    description: "Never wonder where your money went. Hisabi transforms your scattered financial SMS into clear, organized insights—automatically.",
+    image: "/features/visualization.png",
   },
   {
-    title: "Beautiful dashboards and insights",
-    image: "/features/cycle-card.svg",
+    title: "Build wealth, not just track it",
+    description: "Turn data into decisions. See patterns in your spending and make changes that actually grow your wealth over time.",
+    image: "/features/wealth.png",
   },
   {
-    title: "Privacy-first and",
-    titleLink: { text: "open-source", href: "https://github.com/hisabi-app/hisabi" },
-    image: "/features/overview-card.svg",
+    title: "Your data stays yours",
+    description: "Privacy isn't optional. Everything lives on your device. No cloud. No tracking. Just you and your financial truth.",
+    titleLink: { text: "100% open-source", href: "https://github.com/hisabi-app/hisabi" },
+    image: "/features/privacy.png",
   },
 ];
 
@@ -35,10 +38,10 @@ export const Features = () => {
         {/* Content */}
         <div className="mx-auto mt-10 grid max-w-4xl items-center gap-3 md:gap-0 lg:mt-24 lg:grid-cols-2">
           <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            See Your Spending Clearly
+            Take Control. Build Wealth.
           </h2>
           <p className="text-muted-foreground leading-snug">
-            Hisabi organizes your expenses automatically, so you always know where your money goes. No setup. No manual typing. Just automatic clarity.
+            Hisabi isn't just another expense tracker. It's the financial system that helps you understand where you are, make better decisions, and build the wealth you deserve.
           </p>
         </div>
 
@@ -63,7 +66,7 @@ export const Features = () => {
                       {item.title}
                       {item.titleLink && (
                         <>
-                          {" "}
+                          {" — "}
                           <a
                             href={item.titleLink.href}
                             target="_blank"
@@ -75,6 +78,11 @@ export const Features = () => {
                         </>
                       )}
                     </h3>
+                    {item.description && (
+                      <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                        {item.description}
+                      </p>
+                    )}
                   </div>
                 </div>
                 {i < items.length - 1 && (

@@ -40,6 +40,16 @@ export function AboutHero() {
                 Read my first LinkedIn post about this journey →
               </a>
             </p>
+            <p className="text-sm">
+              <a 
+                href="https://www.youtube.com/watch?v=kfwcMdlFn9o"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Watch the first alpha version demo →
+              </a>
+            </p>
           </div>
         </div>
 

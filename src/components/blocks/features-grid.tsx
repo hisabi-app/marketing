@@ -6,120 +6,98 @@ import { cn } from "@/lib/utils";
 
 const topItems = [
   {
-    title: "Smart categorization.",
+    title: "SMS parser.",
     description:
-      "Expenses are automatically organized by category and merchant.",
+      "Automatically parses transaction details from your bank's SMS notifications.",
     images: [
       {
-        src: "/resource-allocation/templates.webp",
-        alt: "Category interface",
-        width: 495,
-        height: 186,
+        src: "/features/sms.png",
+        alt: "SMS parser interface",
+        width: 300,
+        height: 150,
       },
     ],
     className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8  md:[&>.image-container]:place-items-center",
     fade: [""],
   },
   {
-    title: "Privacy first.",
-    description: "Your data stays on your device. No cloud, no tracking.",
-    images: [
-      { src: "/logos/jira.svg", alt: "Encryption", width: 48, height: 48 },
-      { src: "/logos/excel.svg", alt: "Privacy", width: 48, height: 48 },
-      {
-        src: "/logos/notion.svg",
-        alt: "Secure",
-        width: 48,
-        height: 48,
-      },
-      { src: "/logos/word.svg", alt: "Local", width: 48, height: 48 },
-      {
-        src: "/logos/monday.svg",
-        alt: "Open source",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/drive.svg",
-        alt: "Control",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/jira.svg",
-        alt: "Encryption",
-        width: 48,
-        height: 48,
-      },
-      { src: "/logos/asana.svg", alt: "Secure", width: 48, height: 48 },
-    ],
-    className:
-      "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 md:[&>.title-container]:translate-x-2 xl:[&>.title-container]:translate-x-4 [&>.title-container]:translate-x-0",
-    fade: [],
-  },
-];
-
-const bottomItems = [
-  {
-    title: "Smart insights.",
-    description:
-      "Get AI-powered insights into your spending patterns and habits.",
+    title: "Budgeting.",
+    description: "Set monthly budgets for different categories and track your progress.",
     images: [
       {
-        src: "/resource-allocation/graveyard.webp",
-        alt: "Insights interface",
+        src: "/features/budgets.png",
+        alt: "Budgeting interface",
         width: 305,
         height: 280,
       },
     ],
     className:
-      "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+      "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-0 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
+    fade: ["bottom"],
+  },
+];
+
+const bottomItems = [
+  {
+    title: "Smart Insights and visualization.",
+    description:
+      "Get AI-powered insights into your spending patterns and habits.",
+    images: [
+      {
+        src: "/features/insights.png",
+        alt: "Insights interface",
+        width: 305,
+        height: 100,
+      },
+    ],
+    className:
+      "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-5 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
     fade: ["bottom"],
   },
   {
-    title: "Export anywhere.",
+    title: "Exporting (coming soon).",
     description:
       "Export your data to CSV, Excel, or any format you prefer.",
     images: [
       {
-        src: "/resource-allocation/discussions.webp",
+        src: "/features/export.png",
         alt: "Export interface",
         width: 320,
         height: 103,
       },
     ],
     className:
-      "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-0 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
+      "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
     fade: [""],
   },
   {
-    title: "Multiple accounts.",
+    title: "Multiple accounts (coming soon).",
     description:
       "Track expenses across all your bank accounts in one place.",
     images: [
       {
-        src: "/resource-allocation/notifications.webp",
-        alt: "Currency interface",
+        src: "/features/accounts.png",
+        alt: "Multiple accounts interface",
         width: 305,
         height: 280,
       },
     ],
     className:
-      "[&>.title-container]:mb-5 md:[&>.title-container]:mb-8 xl:[&>.image-container]:translate-x-6 [&>.image-container]:translate-x-2",
+      "justify-normal [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 [&>.image-container]:flex-1 md:[&>.image-container]:place-items-center md:[&>.image-container]:-translate-y-3",
     fade: ["bottom"],
   },
 ];
 
-export const ResourceAllocation = () => {
+export const FeaturesGrid = () => {
   return (
     <section
-      id="resource-allocation"
+      id="features-grid"
       className="overflow-hidden pb-28 lg:pb-32"
     >
       <div className="">
         <h2 className="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          Everything you need to manage your money
+          Just the right tooling to manage your money
         </h2>
 
         <div className="mt-8 md:mt-12 lg:mt-20">

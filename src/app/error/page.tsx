@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export default function ErrorPage() {
   return (
     <Background className="via-muted to-muted/80">
-      <div className="container flex min-h-[80vh] items-center justify-center">
+      <div className="container flex min-h-[80vh] pt-46 justify-center">
         <div className="max-w-2xl text-center space-y-8">
           <div className="space-y-4">
             <div className="flex justify-center">
@@ -44,16 +44,6 @@ export default function ErrorPage() {
               <Link href="/">Back to Home</Link>
             </Button>
           </div>
-
-          <p className="text-muted-foreground text-sm">
-            Need help?{" "}
-            <a
-              href="mailto:contact@saleem.dev"
-              className="text-primary underline hover:no-underline"
-            >
-              Contact us
-            </a>
-          </p>
         </div>
       </div>
     </Background>

@@ -31,7 +31,7 @@ const ITEMS = [
       },
       {
         title: "Beautiful Insights",
-        href: "/#resource-allocation",
+        href: "/#features-grid",
         description: "Visualize your spending with clean dashboards and AI insights",
       },
     ],

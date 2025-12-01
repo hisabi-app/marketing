@@ -26,14 +26,6 @@ export default function NotFound() {
                 Back to Home
               </Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="min-w-[200px]"
-            >
-              <Link href="/contact">Contact Support</Link>
-            </Button>
           </div>
         </div>
       </div>

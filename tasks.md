@@ -17,3 +17,9 @@ Once the task is completed just mark it as done with checkmark.
 - [x] Remove login and signup pages
 - [x] Make sure all github links in this project points to https://github.com/hisabi-app/hisabi
 - [x] Update the footer with correct message and CTA
+- [x] rename resource allocation to a better component name (SMS parser, Budgeting, Smart Insights and visualization, Exporting*, Multiple accounts*) (* will be coming soon so add a line below the section)
+- [x] add another link to the story for first alpha version of hisabi (video on youtube) https://www.youtube.com/watch?v=kfwcMdlFn9o
+- [x] review the entire marketing content in this website and give me feedback and suggestions (keep it consice and in points and put in feedback.md )
+- [x] Update the SEO for this project to reflect "Hisabi" branding, including title, description
+- [x] There is some overlap between the high-level "Features" section and the detailed "Features Grid" (e.g., SMS tracking, Insights). Ensure the "Features" section focuses on the *value proposition* (why it matters) while the "Features Grid" details the *functionality* (how it works).
+- [x] remove the github stars count badge

@@ -1,12 +1,9 @@
-import Link from "next/link";
-
 import { Background } from "@/components/background";
-import { Button } from "@/components/ui/button";
 
 export default function ThanksPage() {
   return (
     <Background className="via-muted to-muted/80">
-      <div className="container flex min-h-[80vh] items-center justify-center">
+      <div className="container flex min-h-[80vh] pt-48 justify-center">
         <div className="max-w-2xl text-center space-y-8">
           <div className="space-y-4">
             <div className="flex justify-center">
@@ -34,15 +31,6 @@ export default function ThanksPage() {
               Thank you for signing up. We'll notify you as soon as Hisabi is ready to launch. 
               Keep an eye on your inbox for exclusive updates and early access.
             </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link href="/">Back to Home</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/story">Learn Our Story</Link>
-            </Button>
           </div>
         </div>
       </div>
