@@ -2,104 +2,96 @@ import Image from "next/image";
 
 import { Github } from "lucide-react";
 
+import { BudgetsDemo } from "@/components/live/budgets-demo";
+import { InsightsDemo } from "@/components/live/insights-demo";
+import { KioskDemo } from "@/components/live/kiosk-demo";
+import { MonthDemo } from "@/components/live/month-demo";
+import { NeedsYouDemo } from "@/components/live/needs-you-demo";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-interface Shot {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className?: string;
-}
 
 interface Story {
   eyebrow: string;
   title: string;
   body: string;
-  shots: Shot[];
-  // Several screens side by side instead of stacked
-  row?: boolean;
+  // A short nudge to try the live card
+  hint?: string;
+  demo: React.ReactNode;
+  // The demo takes the full width under the text
+  wide?: boolean;
 }
 
 const stories: Story[] = [
   {
-    eyebrow: "Adding",
-    title: "Paste an SMS. That's it.",
-    body: "Hisabi picks out the amount, the card and the shop, then remembers each shop's category for next time. No bank connections, no typing.",
-    shots: [{ src: "/screens/sms.webp", alt: "A bank SMS with the amount, card and shop highlighted, and the transaction Hisabi found", width: 1208, height: 745 }],
-  },
-  {
     eyebrow: "Home",
     title: "What needs you comes first",
     body: "New brands to sort, budgets over or ahead of pace, messages it couldn't read. Finish one and it checks itself off.",
-    shots: [{ src: "/screens/needs-you.webp", alt: "The Needs you card: two new brands need a category, Shopping is over budget, Dining out is ahead of pace", width: 1608, height: 505 }],
+    hint: "Try it: tap Assign or Review.",
+    demo: <NeedsYouDemo />,
   },
   {
     eyebrow: "This month",
     title: "See how the month is going",
     body: "What you've spent so far against the same point last month, and a few plain sentences about where it went.",
-    row: true,
-    shots: [
-      { src: "/screens/month.webp", alt: "Spent so far this month with a chart against last month", width: 1153, height: 595 },
-      { src: "/screens/insights-card.webp", alt: "Insights written as sentences: most spent at a brand, a category up on last month, money saved", width: 923, height: 505 },
-    ],
+    wide: true,
+    demo: (
+      <div className="grid items-start gap-4 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
+        <MonthDemo />
+        <InsightsDemo />
+      </div>
+    ),
   },
   {
     eyebrow: "Budgets",
     title: "Budgets you can read at a glance",
     body: "Each budget is a ring in its category's color. Over or ahead of pace is written out, so you never have to decode a chart.",
-    shots: [{ src: "/screens/budgets.webp", alt: "Budget rings for Shopping, Dining out, Groceries and Transport", width: 1153, height: 396 }],
+    demo: <BudgetsDemo />,
   },
   {
     eyebrow: "Detail",
     title: "Dig deeper when you want to",
     body: "Tap a budget or an insight and the detail slides in beside the home: spending by brand, then every transaction.",
-    shots: [{ src: "/screens/detail.webp", alt: "The Shopping budget opened beside the home, with spending by brand and its transactions", width: 2880, height: 1800 }],
+    demo: (
+      <Image
+        src="/screens/detail.webp"
+        alt="The Shopping budget opened beside the home, with spending by brand and its transactions"
+        width={2880}
+        height={1800}
+        className="h-auto w-full rounded-[22px] shadow-lg"
+      />
+    ),
   },
   {
     eyebrow: "Kiosk",
     title: "A screen for the kitchen wall",
     body: "Put an old tablet on the wall. It shows the month, your budgets and the latest transaction, and goes dark at night.",
-    row: true,
-    shots: [
-      { src: "/screens/kiosk-day.webp", alt: "The kiosk by day", width: 1920, height: 1200 },
-      { src: "/screens/kiosk-night.webp", alt: "The kiosk at night, in dark", width: 1920, height: 1200 },
-    ],
+    wide: true,
+    demo: <KioskDemo />,
   },
 ];
 
 function StoryRow({ story, index }: { story: Story; index: number }) {
-  const flip = index % 2 === 1 && !story.row;
+  const flip = index % 2 === 1 && !story.wide;
 
   return (
     <div
       className={cn(
         "grid items-center gap-8 lg:gap-14",
-        story.row && "lg:grid-cols-1",
-        !story.row && (flip ? "lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]" : "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"),
+        story.wide && "lg:grid-cols-1",
+        !story.wide && (flip ? "lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]" : "lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]"),
       )}
     >
-      <Reveal className={cn("max-w-md", flip && "lg:order-2", story.row && "max-w-2xl")}>
+      <Reveal className={cn("max-w-md", flip && "lg:order-2", story.wide && "max-w-2xl")}>
         <p className="text-muted-foreground text-sm font-medium">{story.eyebrow}</p>
         <h3 className="font-display mt-2 text-3xl leading-tight md:text-4xl">{story.title}</h3>
         <p className="text-muted-foreground mt-3 text-lg leading-snug">{story.body}</p>
+        {story.hint && <p className="text-info mt-4 text-sm font-semibold">{story.hint}</p>}
       </Reveal>
 
-      <div className={cn("grid items-start gap-4", story.row && "md:grid-cols-2", flip && "lg:order-1")}>
-        {story.shots.map((shot, i) => (
-          <Reveal key={shot.src} delay={i * 90}>
-            <Image
-              src={shot.src}
-              alt={shot.alt}
-              width={shot.width}
-              height={shot.height}
-              className="h-auto w-full rounded-[22px] shadow-lg"
-            />
-          </Reveal>
-        ))}
-      </div>
+      <Reveal delay={90} className={cn(flip && "lg:order-1", story.wide && "mx-auto w-full max-w-4xl")}>
+        {story.demo}
+      </Reveal>
     </div>
   );
 }
@@ -111,7 +103,7 @@ export const Showcase = () => {
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl leading-tight md:text-5xl">Simple first. Deeper when you want it.</h2>
           <p className="text-muted-foreground mt-4 text-lg leading-snug">
-            Hisabi answers three questions on one screen: what needs you, how the month is going, and where the money went. Everything else is one tap away.
+            Hisabi answers three questions on one screen: what needs you, how the month is going, and where the money went. The cards below are live, so go ahead and tap them.
           </p>
         </Reveal>
 

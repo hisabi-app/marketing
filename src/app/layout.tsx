@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/blocks/footer";
 import { Navbar } from "@/components/blocks/navbar";
+import { MotionProvider } from "@/components/motion-provider";
 import { StyleGlideProvider } from "@/components/styleglide-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
@@ -109,9 +110,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <StyleGlideProvider />
-          <Navbar />
-          <main className="">{children}</main>
-          <Footer />
+          <MotionProvider>
+            <Navbar />
+            <main className="">{children}</main>
+            <Footer />
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>
