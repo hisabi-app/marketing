@@ -3,44 +3,45 @@
 import Image from "next/image";
 
 import { Github } from "lucide-react";
+import { motion } from "motion/react";
 
+import { EASE } from "@/components/live/primitives";
+import { SmsDemo } from "@/components/live/sms-demo";
 import { Button } from "@/components/ui/button";
 import { ContainerScroll } from "@/components/ui/container-scroll";
 
-const points = [
-  {
-    title: "Paste an SMS, and you're done",
-    description: "Hisabi reads the amount, the card and the shop from your bank's message.",
-  },
-  {
-    title: "What needs you comes first",
-    description: "New brands to sort and budgets running ahead sit at the top of the home.",
-  },
-  {
-    title: "Budgets you can read at a glance",
-    description: "Each one is a ring, with what's left and whether you're ahead of pace.",
-  },
-  {
-    title: "Yours, on your own server",
-    description: "Open source and self-hosted. Your transactions never leave your machine.",
-  },
-];
+const HEADLINE = "Big income won't make you rich. A system will.";
+
+const rise = (delay: number) => ({
+  initial: { opacity: 0, y: 16 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, ease: EASE, delay },
+});
 
 export const Hero = () => {
+  const words = HEADLINE.split(" ");
+
   return (
-    <section className="pt-32 pb-20 lg:pt-44 lg:pb-28">
-      <div className="container flex flex-col justify-between gap-12 lg:flex-row lg:items-end lg:gap-20">
-        <div className="flex-[1.2]">
-          <p className="text-muted-foreground text-sm font-medium">Open source · Self-hosted · Free</p>
+    <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <div className="container grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16">
+        <div>
+          <motion.p {...rise(0)} className="text-muted-foreground text-sm font-medium">
+            Open source · Self-hosted · Free
+          </motion.p>
           <h1 className="text-foreground mt-3 max-w-160 text-4xl leading-[1.05] md:text-5xl lg:text-6xl">
-            Big income won&apos;t make you rich. A system will.
+            {words.map((word, i) => (
+              <motion.span key={i} {...rise(0.08 + i * 0.045)} className="inline-block whitespace-pre">
+                {word}
+                {i < words.length - 1 ? " " : ""}
+              </motion.span>
+            ))}
           </h1>
 
-          <p className="text-muted-foreground mt-5 max-w-xl text-lg leading-snug md:text-xl">
-            Hisabi turns your bank SMS into a calm, clear picture of your money: what needs you, how the month is going, and where it all went.
-          </p>
+          <motion.p {...rise(0.55)} className="text-muted-foreground mt-5 max-w-xl text-lg leading-snug md:text-xl">
+            Paste a bank SMS and Hisabi does the rest: it reads it, files it, and shows you what needs you, how the month is going, and where it all went.
+          </motion.p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <motion.div {...rise(0.7)} className="mt-8 flex flex-wrap items-center gap-3">
             <Button size="lg" asChild>
               <a href="/#get-notified">Get notified</a>
             </Button>
@@ -58,20 +59,15 @@ export const Hero = () => {
               <Github className="size-4" />
               Star on GitHub
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <ul className="grid flex-1 gap-5">
-          {points.map((point) => (
-            <li key={point.title} className="border-border border-t pt-4">
-              <h2 className="text-foreground font-text text-[15px] font-semibold tracking-normal">{point.title}</h2>
-              <p className="text-muted-foreground mt-0.5 text-sm">{point.description}</p>
-            </li>
-          ))}
-        </ul>
+        <motion.div {...rise(0.35)} className="flex justify-center lg:justify-end">
+          <SmsDemo />
+        </motion.div>
       </div>
 
-      <div className="mt-14 md:mt-20 lg:container lg:mt-24">
+      <div className="mt-20 md:mt-24 lg:container lg:mt-32">
         <ContainerScroll>
           <div className="relative mx-4 md:mx-0">
             <div className="relative w-full overflow-hidden rounded-[22px] shadow-xl" style={{ aspectRatio: "2880 / 1800" }}>
