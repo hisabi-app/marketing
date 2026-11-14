@@ -6,11 +6,13 @@ import { motion, useInView } from "motion/react";
 
 import { AppCard, CountUp, EASE } from "./primitives";
 
+import { cn } from "@/lib/utils";
+
 // Running totals by day: this month so far and all of last month
 const THIS_MONTH = [620, 1180, 1650, 2210, 6890, 7400, 7720, 7980, 8130, 8640, 9010, 9420, 9890, 10285];
 const LAST_MONTH = [540, 1290, 1900, 2600, 7150, 7980, 8300, 8480, 8700, 9100, 9620, 10240, 10900, 11317, 11800, 12320, 12900, 13350, 13800, 14420, 15100, 15800, 16380, 17000, 17650, 18200, 18760, 19280, 19700, 20140];
 
-export function MonthDemo() {
+export function MonthDemo({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
 
@@ -22,7 +24,7 @@ export function MonthDemo() {
   const endY = y(THIS_MONTH[THIS_MONTH.length - 1]);
 
   return (
-    <AppCard className="w-full">
+    <AppCard className={cn("w-full", className)}>
       <div ref={ref}>
         <p className="text-muted-foreground font-medium">Spent so far</p>
         <p className="font-rounded mt-0.5 text-[40px] leading-[1.1] font-bold tracking-[-0.03em]">

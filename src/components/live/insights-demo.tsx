@@ -17,7 +17,7 @@ const INSIGHTS = [
 ];
 
 // Insights written as plain sentences, typed out one after another
-export function InsightsDemo() {
+export function InsightsDemo({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
   const reduced = useReducedMotion();
@@ -36,7 +36,7 @@ export function InsightsDemo() {
   let offset = 0;
 
   return (
-    <AppCard className="w-full">
+    <AppCard className={cn("w-full", className)}>
       <div ref={ref}>
         <div className="mb-1 flex items-center">
           <h4 className="text-base font-bold tracking-[-0.018em]">Insights</h4>
