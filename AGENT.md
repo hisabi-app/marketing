@@ -159,7 +159,7 @@ The site uses the same "Wallet" system as the app (see `DESIGN.md` in the app re
 * **Ink:** `--foreground` / `--primary` `oklch(0.2 0.004 286)` for text, buttons and the app icon. Buttons are pills.
 * **Color:** only from the product itself (category tiles, budget rings in screenshots) and status; no decorative accents.
 * **Type:** the device's own font (SF Pro on Apple devices), bold and tight for headings; `font-rounded` for numbers.
-* **Logo:** `src/components/logo.tsx` (black rounded square with three white ascending bars, plus "hisabi" in lowercase).
+* **Logo:** the original Hisabi wordmark with three green bars (`public/logo.svg`, rendered by `src/components/logo.tsx`); the favicons are the bars on their own. The green belongs to the logo only.
 * **Product shots:** real screenshots of the app in `public/screens/`, taken from demo data.
 * **Motion:** sections rise in once as they scroll into view (`src/components/reveal.tsx`); nothing loops; reduced motion turns it off.
 * **Copy:** short sentences, no em dashes, benefits over features, never invent features.
