@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
+import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
@@ -31,61 +31,37 @@ export const GetNotified = ({ className }: { className?: string }) => {
   };
 
   return (
-    <section id="get-notified" className={cn("py-28 lg:py-32", className)}>
-      <div className="container max-w-4xl">
-        <div className="space-y-4 text-center">
-          <h2 className="text-2xl tracking-tight md:text-4xl lg:text-5xl">
-            Get Notified When We Launch
-          </h2>
-          <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
-            Be the first to know when Hisabi is ready. Join our waitlist and get exclusive early access.
+    <section id="get-notified" className={cn("pb-8", className)}>
+      <div className="container">
+        <Reveal className="bg-card mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center shadow-sm md:px-12 md:py-16">
+          <p className="text-muted-foreground text-sm font-medium">Coming soon</p>
+          <h2 className="mx-auto mt-2 max-w-xl text-3xl leading-tight text-balance md:text-5xl">Get notified when we launch</h2>
+          <p className="text-muted-foreground mx-auto mt-4 max-w-md text-lg leading-snug text-balance">
+            Be the first to know when Hisabi is ready, with early access and special launch pricing.
           </p>
-        </div>
 
-        <div className="mt-8 flex justify-center md:mt-12 lg:mt-20">
-          <Card className="outline-primary relative w-full max-w-lg outline outline-2 rounded-2xl">
-            <div className="bg-primary text-primary-foreground absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full px-6 py-2 text-sm font-semibold">
-              🚀 Coming Soon
-            </div>
-            <CardContent className="flex flex-col gap-8 px-8 py-10">
-              <div className="space-y-4 text-center">
-                <h3 className="text-foreground text-2xl font-semibold">
-                  Join the Waitlist
-                </h3>
-                <p className="text-muted-foreground text-lg">
-                  Get exclusive early access and special launch pricing.
-                </p>
-              </div>
+          <form onSubmit={handleSubmit} className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
+            <label htmlFor="notify-email" className="sr-only">
+              Email
+            </label>
+            <Input
+              id="notify-email"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="bg-background h-11 flex-1 rounded-full border-0 px-5 shadow-none"
+              disabled={isSubmitting}
+            />
+            <Button type="submit" size="lg" disabled={isSubmitting}>
+              {isSubmitting ? "Sending…" : "Get notified"}
+            </Button>
+          </form>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full"
-                    disabled={isSubmitting}
-                  />
-                </div>
-                <Button 
-                  type="submit" 
-                  className="w-full" 
-                  size="lg"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Submitting..." : "Get Notified"}
-                </Button>
-              </form>
-
-              <p className="text-muted-foreground text-center text-sm">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+          <p className="text-muted-foreground mt-4 text-sm">No spam. Unsubscribe any time.</p>
+        </Reveal>
       </div>
     </section>
   );

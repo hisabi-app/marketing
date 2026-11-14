@@ -6,63 +6,74 @@
 @variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* Wallet, the same system as the app: white cards on an off-white canvas, ink for text and actions */
+  --background: oklch(0.972 0.002 286);
+  --foreground: oklch(0.2 0.004 286);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.2 0.004 286);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --brand: oklch(0.623 0.214 259.815);
-  --primary: oklch(0.723 0.219 149.579);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --highlight: oklch(0.852 0.199 91.936);
+  --popover-foreground: oklch(0.2 0.004 286);
+  --brand: oklch(0.2 0.004 286);
+  --primary: oklch(0.2 0.004 286);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.958 0.003 286);
+  --secondary-foreground: oklch(0.2 0.004 286);
+  --muted: oklch(0.958 0.003 286);
+  --muted-foreground: oklch(0.52 0.006 286);
+  --accent: oklch(0.958 0.003 286);
+  --accent-foreground: oklch(0.2 0.004 286);
+  --destructive: oklch(0.58 0.21 25);
+  --border: oklch(0.93 0.003 286);
+  --input: oklch(0.9 0.004 286);
+  --ring: oklch(0.6 0.18 255);
+  --highlight: oklch(0.93 0.05 255);
+  --info: oklch(0.6 0.18 255);
+  --success: oklch(0.6 0.15 150);
 
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* Category colors, as in the app */
+  --cat-red: oklch(0.62 0.2 25);
+  --cat-blue: oklch(0.6 0.18 255);
+  --cat-green: oklch(0.68 0.17 150);
+  --cat-orange: oklch(0.74 0.16 55);
+  --cat-purple: oklch(0.56 0.19 300);
+  --cat-pink: oklch(0.66 0.21 5);
 
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.2 0.004 286);
+  --chart-2: oklch(0.6 0.18 255);
+  --chart-3: oklch(0.74 0.16 55);
+  --chart-4: oklch(0.68 0.17 150);
+  --chart-5: oklch(0.66 0.21 5);
 
-  --radius: 0.625rem;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.2 0.004 286);
+  --sidebar-primary: oklch(0.2 0.004 286);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.958 0.003 286);
+  --sidebar-accent-foreground: oklch(0.2 0.004 286);
+  --sidebar-border: oklch(0.93 0.003 286);
+  --sidebar-ring: oklch(0.6 0.18 255);
 
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --radius: 0.875rem;
 
-  --font-inter: "inter", sans-serif;
+  --shadow-2xs: 0 1px 2px oklch(0.2 0.004 286 / 0.04);
+  --shadow-xs: 0 1px 2px oklch(0.2 0.004 286 / 0.05);
+  --shadow-sm: 0 1px 2px oklch(0.2 0.004 286 / 0.05);
+  --shadow: 0 1px 2px oklch(0.2 0.004 286 / 0.06), 0 4px 12px -4px oklch(0.2 0.004 286 / 0.08);
+  --shadow-md: 0 1px 2px oklch(0.2 0.004 286 / 0.06), 0 10px 30px -10px oklch(0.2 0.004 286 / 0.2);
+  --shadow-lg: 0 1px 2px oklch(0.2 0.004 286 / 0.06), 0 20px 50px -18px oklch(0.2 0.004 286 / 0.28);
+  --shadow-xl: 0 2px 4px oklch(0.2 0.004 286 / 0.06), 0 40px 90px -30px oklch(0.2 0.004 286 / 0.35);
+  --shadow-2xl: 0 2px 4px oklch(0.2 0.004 286 / 0.06), 0 50px 100px -30px oklch(0.2 0.004 286 / 0.4);
 
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* The device's own font, like the app: SF Pro on Apple devices */
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-rounded: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-sans: var(--font-system);
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  /* StyleGlide provides a better abstraction for fonts */
-  --display-family: var(--font-inter);
-  --text-family: var(--font-inter);
-  --display-weight: 600;
+  --display-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text-family: var(--font-system);
+  --display-weight: 700;
   --text-weight: 400;
 }
 
@@ -139,6 +150,17 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-info: var(--info);
+  --color-success: var(--success);
+  --color-cat-red: var(--cat-red);
+  --color-cat-blue: var(--cat-blue);
+  --color-cat-green: var(--cat-green);
+  --color-cat-orange: var(--cat-orange);
+  --color-cat-purple: var(--cat-purple);
+  --color-cat-pink: var(--cat-pink);
+  --font-rounded: var(--font-rounded);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 
   --radius-xs: calc(var(--radius) - 4px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -229,6 +251,7 @@
   .font-display {
     font-family: var(--font-display);
     font-weight: var(--display-weight);
+    letter-spacing: -0.03em;
   }
   .font-mono {
     font-family: var(--font-mono), monospace;
@@ -250,4 +273,24 @@ body {
 }
 body {
   position: relative;
+}
+
+/* Sections rise in as they scroll into view (see components/reveal.tsx) */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+}
+/* Only hidden once JavaScript is running, so the page is complete without it */
+.js .reveal:not(.is-visible) {
+  opacity: 0;
+}
+.reveal.is-visible {
+  opacity: 1;
+  animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: var(--delay, 0ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible {
+    opacity: 1;
+    animation: none;
+  }
 }
