@@ -4,6 +4,8 @@ import { Car, ChevronRight, Shirt, ShoppingCart, UtensilsCrossed } from "lucide-
 
 import { AppCard, CountUp, Ring, amount } from "./primitives";
 
+import { cn } from "@/lib/utils";
+
 const BUDGETS = [
   { name: "Shopping", spent: 2293, total: 1500, color: "var(--cat-pink)", Icon: Shirt },
   { name: "Dining out", spent: 1684, total: 3000, color: "var(--cat-orange)", Icon: UtensilsCrossed, ahead: true },
@@ -11,16 +13,17 @@ const BUDGETS = [
   { name: "Transport", spent: 1899, total: 4500, color: "var(--cat-purple)", Icon: Car },
 ];
 
-export function BudgetsDemo() {
+// twoUp keeps the rings in two columns for narrow spaces
+export function BudgetsDemo({ className, twoUp }: { className?: string; twoUp?: boolean }) {
   return (
-    <AppCard className="w-full">
+    <AppCard className={cn("w-full", className)}>
       <div className="mb-2 flex items-center">
         <h4 className="text-base font-bold tracking-[-0.018em]">Budgets</h4>
         <span className="text-muted-foreground ml-auto inline-flex items-center text-[13px]">
           All <ChevronRight className="size-3.5" aria-hidden="true" />
         </span>
       </div>
-      <div className="grid grid-cols-2 gap-y-4 sm:grid-cols-4">
+      <div className={cn("grid grid-cols-2 gap-y-4", !twoUp && "sm:grid-cols-4")}>
         {BUDGETS.map((budget, i) => {
           const Icon = budget.Icon;
           const over = budget.spent > budget.total;

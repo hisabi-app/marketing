@@ -17,7 +17,7 @@ const ITEMS = [
 ];
 
 // Needs you, as in the app: finish an item and it checks itself off
-export function NeedsYouDemo() {
+export function NeedsYouDemo({ className }: { className?: string }) {
   const [done, setDone] = useState<string[]>([]);
   const [leaving, setLeaving] = useState<string[]>([]);
   const remaining = ITEMS.filter((item) => !done.includes(item.key));
@@ -33,7 +33,7 @@ export function NeedsYouDemo() {
   };
 
   return (
-    <AppCard className="w-full">
+    <AppCard className={cn("w-full", className)}>
       <div className="mb-1 flex items-center gap-2">
         <h4 className="text-base font-bold tracking-[-0.018em]">Needs you</h4>
         <AnimatePresence mode="popLayout">

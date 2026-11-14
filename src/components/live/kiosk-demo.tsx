@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 
 // The kiosk by day and at night; it switches by itself until you pick one
-export function KioskDemo() {
+export function KioskDemo({ className }: { className?: string }) {
   const [night, setNight] = useState(false);
   const [touched, setTouched] = useState(false);
 
@@ -31,7 +31,7 @@ export function KioskDemo() {
   };
 
   return (
-    <div className="grid gap-4">
+    <div className={cn("grid gap-4", className)}>
       <div className="border-foreground relative overflow-hidden rounded-[26px] border-[10px] shadow-xl" style={{ aspectRatio: "16 / 10" }}>
         <AnimatePresence initial={false}>
           <motion.div key={night ? "night" : "day"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.9, ease: EASE }} className="absolute inset-0">
