@@ -10,6 +10,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
+  // Social cards need absolute image URLs; without this they point at localhost
+  metadataBase: new URL("https://hisabi.saleem.dev"),
   title: {
     default: "Hisabi - Your Personal Finance System",
     template: "%s | Hisabi",

@@ -35,9 +35,12 @@ const ITEMS = [
       },
     ],
   },
-  { label: "Story", href: "/story" },
+  { label: "Story", href: "/story/" },
   { label: "Get notified", href: "/#get-notified" },
 ];
+
+// Pages are exported with a trailing slash; compare paths without it
+const samePath = (a: string | null, b: string) => (a ?? "").replace(/\/$/, "") === b.replace(/\/$/, "");
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,7 +98,7 @@ export const Navbar = () => {
                     href={link.href}
                     className={cn(
                       "relative bg-transparent px-1.5 text-sm font-medium transition-opacity hover:opacity-75",
-                      pathname === link.href && "text-muted-foreground",
+                      samePath(pathname, link.href) && "text-muted-foreground",
                     )}
                   >
                     {link.label}
@@ -210,7 +213,7 @@ export const Navbar = () => {
                 href={link.href}
                 className={cn(
                   "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
-                  pathname === link.href && "text-muted-foreground",
+                  samePath(pathname, link.href) && "text-muted-foreground",
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >

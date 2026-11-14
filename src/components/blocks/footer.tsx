@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 export function Footer() {
   const navigation = [
     { name: "Features", href: "/#features" },
-    { name: "Story", href: "/story" },
+    { name: "Story", href: "/story/" },
     { name: "Get notified", href: "/#get-notified" },
-    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Privacy Policy", href: "/privacy/" },
   ];
 
   return (
