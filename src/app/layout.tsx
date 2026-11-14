@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import Script from "next/script";
 
 import type { Metadata } from "next";
@@ -9,19 +8,13 @@ import { StyleGlideProvider } from "@/components/styleglide-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: {
     default: "Hisabi - Your Personal Finance System",
     template: "%s | Hisabi",
   },
   description:
-    "Big income won't make you rich. A system will. Hisabi automatically tracks your expenses from SMS, provides AI-powered insights, and helps you build real wealth. Open-source, privacy-first financial management.",
+    "Big income won't make you rich. A system will. Hisabi turns your bank SMS into a clear picture of your money: what needs you, how the month is going, and where it went. Open source and self-hosted.",
   keywords: [
     "Hisabi",
     "personal finance",
@@ -56,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hisabi - Your Personal Finance System",
     description:
-      "Big income won't make you rich. A system will. Hisabi automatically tracks your expenses from SMS, provides AI-powered insights, and helps you build real wealth. Open-source and privacy-first.",
+      "Big income won't make you rich. A system will. Hisabi turns your bank SMS into a clear picture of your money. Open source and self-hosted.",
     siteName: "Hisabi",
     type: "website",
     images: [
@@ -72,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Hisabi - Your Personal Finance System",
     description:
-      "Big income won't make you rich. A system will. Hisabi automatically tracks your expenses from SMS and helps you build real wealth. Open-source and privacy-first.",
+      "Big income won't make you rich. A system will. Hisabi turns your bank SMS into a clear picture of your money. Open source and self-hosted.",
     images: ["/og-image.jpg"],
     creator: "@hisabi",
   },
@@ -86,6 +79,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Lets sections hide until they scroll into view; without JavaScript everything just shows */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+        <meta name="theme-color" content="#f5f5f7" />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-DE36YTFR3F"
@@ -105,7 +101,7 @@ export default function RootLayout({
           src="https://tweakcn.com/live-preview.min.js"
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>
+      <body className="antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

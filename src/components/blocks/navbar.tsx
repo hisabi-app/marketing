@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { ChevronRight, Github } from "lucide-react";
 
+import { Logo } from "@/components/logo";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -24,20 +24,19 @@ const ITEMS = [
     href: "#features",
     dropdownItems: [
       {
-        title: "Smart SMS Detection",
+        title: "Paste an SMS",
         href: "/#features",
-        description:
-          "Hisabi reads your bank SMS messages and extracts transactions automatically",
+        description: "Hisabi reads the amount, the card and the shop from your bank's message",
       },
       {
-        title: "Beautiful Insights",
+        title: "Your own server",
         href: "/#features-grid",
-        description: "Visualize your spending with clean dashboards and AI insights",
+        description: "Open source and self-hosted, so your money stays yours",
       },
     ],
   },
   { label: "Story", href: "/story" },
-  { label: "Get Notified", href: "/#get-notified" },
+  { label: "Get notified", href: "/#get-notified" },
 ];
 
 export const Navbar = () => {
@@ -48,19 +47,13 @@ export const Navbar = () => {
   return (
     <section
       className={cn(
-        "bg-background/70 absolute left-1/2 z-50 w-[min(90%,700px)] -translate-x-1/2 rounded-4xl border backdrop-blur-md transition-all duration-300",
+        "bg-card absolute left-1/2 z-50 w-[min(92%,700px)] -translate-x-1/2 rounded-full shadow-md transition-all duration-300",
         "top-5 lg:top-12",
       )}
     >
       <div className="flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2">
-          <Image
-            src="/logo.svg"
-            alt="logo"
-            width={94}
-            height={18}
-            className="dark:invert"
-          />
+          <Logo />
         </Link>
 
         {/* Desktop Navigation */}
@@ -152,7 +145,7 @@ export const Navbar = () => {
       {/*  Mobile Menu Navigation */}
       <div
         className={cn(
-          "bg-background fixed inset-x-0 top-[calc(100%+1rem)] flex flex-col rounded-2xl border p-6 transition-all duration-300 ease-in-out lg:hidden",
+          "bg-card fixed inset-x-0 top-[calc(100%+1rem)] flex flex-col rounded-3xl p-6 shadow-md transition-all duration-300 ease-in-out lg:hidden",
           isMenuOpen
             ? "visible translate-y-0 opacity-100"
             : "invisible -translate-y-4 opacity-0",
@@ -168,7 +161,7 @@ export const Navbar = () => {
                       openDropdown === link.label ? null : link.label,
                     )
                   }
-                  className="text-primary flex w-full items-center justify-between text-base font-medium"
+                  className="text-foreground flex w-full items-center justify-between text-base font-medium"
                 >
                   {link.label}
                   <ChevronRight

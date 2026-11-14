@@ -151,124 +151,15 @@ Follow this structure: *Title*, *Short description*, *Benefit line*
 
 
 ## 🎨 Hisabi UI Guidelines
-#### Color Palette
 
-The application uses OKLch color space for accessible, consistent colors:
+The site uses the same "Wallet" system as the app (see `DESIGN.md` in the app repo, https://github.com/hisabi-app/hisabi). Tokens live in `src/styles/globals.css`.
 
-### Core Interface Colors (Light Mode)
-
-| Role | Variable Name | OKLCH Value | Color Interpretation |
-| :--- | :--- | :--- | :--- |
-| **Brand Accent** | `--brand` | `oklch(0.623 0.214 259.815)` | **Deep Indigo/Purple** (The primary brand color) |
-| **Primary Action** | `--primary` | `oklch(72.3% 0.219 149.579)` | **Vibrant Cyan/Green** (Used for main CTAs/active elements) |
-| **Background** | `--background` | `oklch(1 0 0)` | **Pure White** |
-| **Foreground Text** | `--foreground` | `oklch(0.145 0 0)` | **Near-Black** (Primary text color) |
-| **Destructive/Error** | `--destructive` | `oklch(0.577 0.245 27.325)` | **Mid-tone Red/Orange** (Used for errors or warnings) |
-| **Border/Input** | `--border` / `--input` | `oklch(0.922 0 0)` | **Light Gray** (For borders and input outlines) |
-| **Highlight** | `--highlight` | `oklch(0.852 0.199 91.936)` | **Light Yellow/Green** (Used for subtle highlighting) |
-| **Sidebar Primary** | `--sidebar-primary` | `oklch(0.205 0 0)` | **Dark Gray/Black** (Sidebar background/accent) |
-
----
-
-### Data Visualization Colors (Light Mode Charts)
-
-These variables are specifically used for distinguishing data points in charts (e.g., spending categories):
-
-| Variable Name | OKLCH Value | Color Interpretation |
-| :--- | :--- | :--- |
-| `--chart-1` | `oklch(0.646 0.222 41.116)` | **Yellow/Orange** |
-| `--chart-2` | `oklch(0.6 0.118 184.704)` | **Muted Blue-Green** |
-| `--chart-3` | `oklch(0.398 0.07 227.392)` | **Dark Blue** |
-| `--chart-4` | `oklch(0.828 0.189 84.429)` | **Lime Green** |
-| `--chart-5` | `oklch(0.769 0.188 70.08)` | **Mid-tone Yellow** |
-
-
-#### Typography
-
-```css
-/* Font Stack */
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
-/* Scale */
---text-xs: 0.75rem;    /* 12px */
---text-sm: 0.875rem;   /* 14px */
---text-base: 1rem;     /* 16px */
---text-lg: 1.125rem;   /* 18px */
---text-xl: 1.25rem;    /* 20px */
---text-2xl: 1.5rem;    /* 24px */
---text-3xl: 1.875rem;  /* 30px */
-```
-
-#### Spacing
-
-```css
-/* Spacing Scale (Tailwind) */
---spacing-1: 0.25rem;  /* 4px */
---spacing-2: 0.5rem;   /* 8px */
---spacing-3: 0.75rem;  /* 12px */
---spacing-4: 1rem;     /* 16px */
---spacing-5: 1.25rem;  /* 20px */
---spacing-6: 1.5rem;   /* 24px */
---spacing-8: 2rem;     /* 32px */
-```
-
-#### Border Radius
-
-```css
---radius: 0.625rem;    /* 10px - base radius */
---radius-sm: calc(var(--radius) - 4px);
---radius-md: calc(var(--radius) - 2px);
---radius-lg: var(--radius);
---radius-xl: calc(var(--radius) + 4px);
-```
-
-### Component Guidelines
-
-#### Cards
-
-```tsx
-// Standard card usage
-<Card>
-    <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Optional description</CardDescription>
-    </CardHeader>
-    <CardContent>
-        {/* Content here */}
-    </CardContent>
-    <CardFooter>
-        {/* Actions here */}
-    </CardFooter>
-</Card>
-```
-
-#### Buttons
-
-| Variant | Use Case |
-|---------|----------|
-| `default` | Primary actions |
-| `secondary` | Secondary actions |
-| `outline` | Tertiary actions |
-| `ghost` | Inline actions, icons |
-| `destructive` | Delete, dangerous actions |
-| `link` | Navigation-style buttons |
-
-```tsx
-<Button variant="default">Save Changes</Button>
-<Button variant="destructive">Delete</Button>
-<Button variant="ghost" size="icon">
-    <PlusIcon className="h-4 w-4" />
-</Button>
-```
-
-
----
-
-# 8. When in Doubt
-The agent should:
-
-1.  Favor simplicity over complexity.
-2.  Favor benefits over technical detail.
-3.  Preserve trust and user privacy as central themes.
-4.  Avoid sounding overly promotional.
-5.  Stick to facts about the project.
+* **Canvas:** always white or off-white (`--background`, `oklch(0.972 0.002 286)`); never tinted or gradient backgrounds.
+* **Cards:** white (`--card`), large radius (22 to 28px), soft shadows, no borders.
+* **Ink:** `--foreground` / `--primary` `oklch(0.2 0.004 286)` for text, buttons and the app icon. Buttons are pills.
+* **Color:** only from the product itself (category tiles, budget rings in screenshots) and status; no decorative accents.
+* **Type:** the device's own font (SF Pro on Apple devices), bold and tight for headings; `font-rounded` for numbers.
+* **Logo:** `src/components/logo.tsx` (black rounded square with three white ascending bars, plus "hisabi" in lowercase).
+* **Product shots:** real screenshots of the app in `public/screens/`, taken from demo data.
+* **Motion:** sections rise in once as they scroll into view (`src/components/reveal.tsx`); nothing loops; reduced motion turns it off.
+* **Copy:** short sentences, no em dashes, benefits over features, never invent features.
