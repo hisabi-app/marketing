@@ -19,7 +19,7 @@ export const Hero = () => {
   const words = HEADLINE.split(" ");
 
   return (
-    <section className="bg-card pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <section className="pt-32 pb-16 lg:pt-40 lg:pb-20">
       <div className="container">
         <div className="max-w-[860px]">
           <motion.p {...rise(0)} className="text-muted-foreground text-sm font-semibold">

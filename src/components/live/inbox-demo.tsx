@@ -108,7 +108,7 @@ export function InboxDemo() {
   const spent = MESSAGES.slice(0, filed).reduce((sum, message) => sum + message.amount, 0);
 
   return (
-    <div ref={ref} data-phase={phase} className="inbox bg-background grid gap-6 rounded-[30px] p-5 md:p-7 lg:grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] lg:gap-0">
+    <div ref={ref} data-phase={phase} className="inbox bg-card grid gap-6 rounded-[30px] p-5 shadow-sm md:p-7 lg:grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] lg:gap-0">
       <div>
         <p className="mb-3.5 flex items-baseline gap-2 font-bold">
           Messages <span className="text-muted-foreground text-[13.5px] font-medium">from your bank, today</span>
@@ -149,7 +149,7 @@ export function InboxDemo() {
         <p className="mb-3.5 flex items-baseline gap-2 font-bold">
           Hisabi <span className="text-muted-foreground text-[13.5px] font-medium">Transactions</span>
         </p>
-        <div className="bg-card rounded-[22px] px-5 pt-3.5 pb-1.5 shadow-sm">
+        <div className="bg-background rounded-[22px] px-5 pt-3.5 pb-1.5">
           <div className="flex items-baseline justify-between border-b pb-2.5">
             <h3 className="font-bold">Today</h3>
             <span className="inbox-total text-muted-foreground font-rounded text-[13px] tabular-nums">{amount(spent, 2)} spent</span>
