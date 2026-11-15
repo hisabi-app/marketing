@@ -7,7 +7,7 @@ import { InboxDemo } from "@/components/live/inbox-demo";
 import { EASE } from "@/components/live/primitives";
 import { Button } from "@/components/ui/button";
 
-const HEADLINE = "Your bank texts you every purchase. Hisabi reads them for you.";
+const HEADLINE = "Big income won't make you rich. A system will.";
 
 const rise = (delay: number) => ({
   initial: { opacity: 0, y: 16 },
@@ -34,16 +34,16 @@ export const Hero = () => {
             ))}
           </h1>
           <motion.p {...rise(0.5)} className="text-muted-foreground mt-5 max-w-[620px] text-lg leading-snug md:text-xl">
-            Paste the messages you already get. Hisabi picks out the amount, the card and the shop, files each one, and shows you what needs you.
+            Hisabi is that system: paste your bank SMS and see what needs you, how the month is going, and where it went.
           </motion.p>
           <motion.div {...rise(0.62)} className="mt-8 flex flex-wrap items-center gap-3">
             <Button size="lg" asChild>
-              <a href="https://hisabi.on-forge.com/" target="_blank" rel="noopener noreferrer">
-                Try the demo
+              <a href="https://github.com/hisabi-app/hisabi#%EF%B8%8F-installation" target="_blank" rel="noopener noreferrer">
+                Download
               </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="/#get-notified">Get notified</a>
+              <a href="/#updates">Get product updates</a>
             </Button>
             <a
               href="https://github.com/hisabi-app/hisabi"

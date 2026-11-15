@@ -38,7 +38,7 @@ export default function ErrorPage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <Link href="/#get-notified">Try Again</Link>
+              <Link href="/#updates">Try Again</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="/">Back to Home</Link>

@@ -25,11 +25,10 @@ export default function ThanksPage() {
               </div>
             </div>
             <h1 className="text-3xl tracking-tight md:text-5xl lg:text-6xl">
-              You're on the list!
+              You're subscribed
             </h1>
             <p className="text-muted-foreground mx-auto max-w-xl text-lg leading-relaxed">
-              Thank you for signing up. We'll notify you as soon as Hisabi is ready to launch. 
-              Keep an eye on your inbox for exclusive updates and early access.
+              Thanks for signing up. We'll email you when there's something new in Hisabi.
             </p>
           </div>
         </div>

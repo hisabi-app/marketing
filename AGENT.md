@@ -104,7 +104,7 @@ Follow this structure: *Title*, *Short description*, *Benefit line*
 
 ## Do Not
 * **Do not** invent features that don’t exist.
-* **Do not** mention pricing unless instructed.
+* **Do not** mention pricing, paid plans or launch offers. Hisabi is free and open source.
 * **Do not** make the product sound like a bank, fintech provider, or investment advisory tool.
 * **Do not** promise financial outcomes (*e.g., “you will save more money,” “guaranteed to fix budgets”*).
 
@@ -142,10 +142,10 @@ Follow this structure: *Title*, *Short description*, *Benefit line*
 * “You deserve to feel in control of your money — Hisabi makes that easy.”
 
 ## CTA Examples
-* “Join the waitlist”
-* “Get early access”
-* “Try the demo”
+* “Download” (the main CTA)
+* “Get product updates” (the secondary CTA)
 * “See how Hisabi works”
+* “Star on GitHub”
 
 ---
 

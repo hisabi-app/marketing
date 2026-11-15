@@ -54,7 +54,9 @@ export const Navbar = () => {
         </nav>
 
         <Button asChild className="ml-auto h-10 px-5 lg:ml-0">
-          <a href="/#get-notified">Get notified</a>
+          <a href="https://github.com/hisabi-app/hisabi#%EF%B8%8F-installation" target="_blank" rel="noopener noreferrer">
+            Download
+          </a>
         </Button>
 
         <button
