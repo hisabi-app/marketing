@@ -18,7 +18,7 @@ export const Updates = ({ className }: { className?: string }) => {
     // Create a form and submit it to the external service
     const form = document.createElement("form");
     form.method = "POST";
-    form.action = "https://app.nashra.ai/api/subscribe/WLS8KKQvCoxgtEQR9uwFNLMq";
+    form.action = "https://app.nashra.ai/api/subscribe/EJChuUiegehFXehZXdfp778l";
 
     const emailInput = document.createElement("input");
     emailInput.type = "hidden";
