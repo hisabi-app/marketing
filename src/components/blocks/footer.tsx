@@ -5,7 +5,7 @@ import { Logo } from "@/components/logo";
 const LINKS = [
   { name: "Features", href: "/#features" },
   { name: "Story", href: "/story/" },
-  { name: "Get notified", href: "/#get-notified" },
+  { name: "Product updates", href: "/#updates" },
   { name: "Privacy", href: "/privacy/" },
 ];
 

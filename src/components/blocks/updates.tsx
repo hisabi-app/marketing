@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-export const GetNotified = ({ className }: { className?: string }) => {
+export const Updates = ({ className }: { className?: string }) => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -31,21 +31,21 @@ export const GetNotified = ({ className }: { className?: string }) => {
   };
 
   return (
-    <section id="get-notified" className={cn("pb-8", className)}>
+    <section id="updates" className={cn("pb-8", className)}>
       <div className="container">
         <Reveal className="bg-card mx-auto max-w-3xl rounded-[28px] px-6 py-12 text-center shadow-sm md:px-12 md:py-16">
-          <p className="text-muted-foreground text-sm font-medium">Coming soon</p>
-          <h2 className="mx-auto mt-2 max-w-xl text-3xl leading-tight text-balance md:text-5xl">Get notified when we launch</h2>
+          <p className="text-muted-foreground text-sm font-medium">Product updates</p>
+          <h2 className="mx-auto mt-2 max-w-xl text-3xl leading-tight text-balance md:text-5xl">Hear what&apos;s new in Hisabi</h2>
           <p className="text-muted-foreground mx-auto mt-4 max-w-md text-lg leading-snug text-balance">
-            Be the first to know when Hisabi is ready, with early access and special launch pricing.
+            Get an email when there&apos;s something new to try, like a new feature or support for more banks.
           </p>
 
           <form onSubmit={handleSubmit} className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
-            <label htmlFor="notify-email" className="sr-only">
+            <label htmlFor="updates-email" className="sr-only">
               Email
             </label>
             <Input
-              id="notify-email"
+              id="updates-email"
               type="email"
               name="email"
               placeholder="you@example.com"
@@ -56,7 +56,7 @@ export const GetNotified = ({ className }: { className?: string }) => {
               disabled={isSubmitting}
             />
             <Button type="submit" size="lg" disabled={isSubmitting}>
-              {isSubmitting ? "Sending…" : "Get notified"}
+              {isSubmitting ? "Sending…" : "Subscribe"}
             </Button>
           </form>
 
